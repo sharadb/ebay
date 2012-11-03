@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js">
+	</script>
+	<script type="text/javascript">
+		(function($) {
+			$(document).ready(function(){
+				var postData = '{"user":"' + data.user+ '"}';
+				$.ajax({
+				  type: 'POST',
+				  url: "/getuserdata",
+				  data: postData,
+				  dataType: "json",
+				  success: function(result) {
+					console.log(result);
+				  }
+			});
+	</script>
+	
+	<style = "text/css">
+		body {
+			background-image: url(https://si0.twimg.com/images/themes/theme1/bg.png);
+		}
+		body {
+			background-position: left 40px;
+			background-attachment: fixed;
+			background-repeat: repeat;
+			background-repeat: no-repeat;
+			background-color: #C0DEED;
+		}
+		.topbar {
+			height: 40px;
+			position: fixed;
+			top: 0;
+			right: 0;
+			left: 0;
+			z-index: 1000;
+			-webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, .25);
+			-moz-box-shadow: 0 2px 3px rgba(0,0,0,.25);
+			box-shadow: 0 2px 3px rgba(0, 0, 0, .25);
+		}
+		.global-nav {
+			height: 40px;
+			background-position: 0 0;
+			background-color: #252525;
+			background-image: url(https://si0.twimg.com/a/1351819575/t1/img/twitter_web_sprite_bgs.png);
+			background-repeat: repeat-x;
+		}
+		.global-nav .container {
+			width: 865px;
+		}
+		
+		
+		.nav {
+			margin-right: 12px;
+		}
+		.nav, .nav > li {
+			float: left;
+		}
+		ul {
+			list-style: none;
+		}
+		ul, ol {
+		padding: 0;
+		margin: 0;
+		}
+		ul, menu, dir {
+		display: block;
+		list-style-type: disc;
+		-webkit-margin-before: 1em;
+		-webkit-margin-after: 1em;
+		-webkit-margin-start: 0px;
+		-webkit-margin-end: 0px;
+		-webkit-padding-start: 200px;
+		}
+		body, label, input, textarea, select, button {
+			font-family: "Helvetica Neue",Arial,sans-serif;
+		}
+		body {
+			font-size: 14px;
+			line-height: 18px;
+			color: #333;
+		}
+		ul.nav li{
+			list-style:none;
+		}
+		ul.nav li a{
+			color: white;
+			margin-left:20px;
+			
+		}
+		
+		.flex-module {
+			background-color: #F9F9F9;
+			padding: 12px;
+			line-height: 16px;
+			border-top-left-radius: 5px;
+			border-top-right-radius: 5px;
+			border-bottom-left-radius: 5px;
+			border-bottom-right-radius: 5px;
+			
+			display: block;
+			width: 800px;
+			margin-top:80px !important;
+			margin-left:140px !important;
+		}
+				
+	</style>
+  </head>
+	<div class="topbar js-topbar">
+		<div class="global-nav" data-section-term="top_nav">
+			<div class="global-nav-inner">
+			              <div class="container">
+							<ul class="nav js-global-actions" id="global-actions">
+								<li><a href="/home?user=sharad.banka@gmail.com">Home</a></li>
+								<li><a href="/leaderboard">Leader Board</a></li>
+							</ul>
+						  </div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="flex-module trends-inner">
+		
+	</div>
+	
+	
+  <body>
+	
+	
+  </body>
+</html>
+

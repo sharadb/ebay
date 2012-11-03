@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js">
+	</script>
+	<script type="text/javascript">
+		(function($) {
+			$(document).ready(function(){
+				$.get("/getleaderboard",function(results) {
+					results = $.parseJSON(results);
+					var h = "";
+					for(var i=0; i<results.length; ++i) {
+						h += "<tr><td>" + results[i].user + "</td>";
+						h += "<td>" + results[i].nBottles + "</td></tr>";
+					}
+					$("#leaderBody").html(h);
+				});
+			});
+		})(jQuery);
+	</script>
+	
+	<style = "text/css">
+		body {
+			background-image: url(https://si0.twimg.com/images/themes/theme1/bg.png);
+		}
+		body {
+			background-position: left 40px;
+			background-attachment: fixed;
+			background-repeat: repeat;
+			background-repeat: no-repeat;
+			background-color: #C0DEED;
+		}
+		.topbar {
+			height: 40px;
+			position: fixed;
+			top: 0;
+			right: 0;
+			left: 0;
+			z-index: 1000;
+			-webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, .25);
+			-moz-box-shadow: 0 2px 3px rgba(0,0,0,.25);
+			box-shadow: 0 2px 3px rgba(0, 0, 0, .25);
+		}
+		.global-nav {
+			height: 40px;
+			background-position: 0 0;
+			background-color: #252525;
+			background-image: url(https://si0.twimg.com/a/1351819575/t1/img/twitter_web_sprite_bgs.png);
+			background-repeat: repeat-x;
+		}
+		.global-nav .container {
+			width: 865px;
+		}
+		
+		
+		.nav {
+			margin-right: 12px;
+		}
+		.nav, .nav > li {
+			float: left;
+		}
+		ul {
+			list-style: none;
+		}
+		ul, ol {
+		padding: 0;
+		margin: 0;
+		}
+		ul, menu, dir {
+		display: block;
+		list-style-type: disc;
+		-webkit-margin-before: 1em;
+		-webkit-margin-after: 1em;
+		-webkit-margin-start: 0px;
+		-webkit-margin-end: 0px;
+		-webkit-padding-start: 200px;
+		}
+		body, label, input, textarea, select, button {
+			font-family: "Helvetica Neue",Arial,sans-serif;
+		}
+		body {
+			font-size: 14px;
+			line-height: 18px;
+			color: #333;
+		}
+		ul.nav li{
+			list-style:none;
+		}
+		ul.nav li a{
+			color: white;
+			margin-left:20px;
+			
+		}
+		
+		.flex-module {
+			background-color: #F9F9F9;
+			padding: 12px;
+			line-height: 16px;
+			border-top-left-radius: 5px;
+			border-top-right-radius: 5px;
+			border-bottom-left-radius: 5px;
+			border-bottom-right-radius: 5px;
+			
+			display: block;
+			width: 800px;
+			margin-top:80px !important;
+			margin-left:140px !important;
+		}
+		table {
+			line-height: 23px;
+			margin-left: 140px !important;
+		}
+		tr {
+		display: table-row;
+		vertical-align: inherit;
+		border-color: inherit;
+		}
+		#rounded-corner td {
+		background: #E8EDFF;
+		border-top: 1px solid white;
+		color: #669;
+		padding: 8px;
+		}
+		#rounded-corner {
+		font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+		font-size: 12px;
+		width: 480px;
+		text-align: left;
+		border-collapse: collapse;
+		margin: 20px;
+		}
+		thead {
+		display: table-header-group;
+		vertical-align: middle;
+		border-color: inherit;
+		}
+		#rounded-corner thead th.rounded-user {
+		background: #B9C9FE url("http://media.smashingmagazine.com/images/express-css-table-design/table-images/left.png") left -1px no-repeat;
+		}
+		#rounded-corner th {
+		font-weight: normal;
+		font-size: 13px;
+		color: #039;
+		background: #B9C9FE;
+		padding: 8px;
+		}
+		#rounded-corner thead th.rounded-points {
+		background: #B9C9FE url("http://media.smashingmagazine.com/images/express-css-table-design/table-images/right.png") right -1px no-repeat;
+		}
+		#rounded-corner tfoot td.rounded-foot-left {
+		background: #E8EDFF url("http://media.smashingmagazine.com/images/express-css-table-design/table-images/botleft.png") left bottom no-repeat;
+		}
+		#rounded-corner tfoot td.rounded-foot-right {
+		background: #E8EDFF url("http://media.smashingmagazine.com/images/express-css-table-design/table-images/botright.png") right bottom no-repeat;
+		}
+				
+	</style>
+  </head>
+	<div class="topbar js-topbar">
+		<div class="global-nav" data-section-term="top_nav">
+			<div class="global-nav-inner">
+			              <div class="container">
+							<ul class="nav js-global-actions" id="global-actions">
+								<li><a href="/home?user=sharad.banka@gmail.com">Home</a></li>
+								<li><a href="/leaderboard">Leader Board</a></li>
+							</ul>
+						  </div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="flex-module trends-inner">
+		<h2> Leader Board </h2>
+		<table id="rounded-corner" summary="2007 Major IT Companies' Profit">
+		<thead>
+		<tr>
+		<th scope="col" class="rounded-user">User</th>
+		<th scope="col" class="rounded-points">Points</th>
+		</tr>
+		</thead>
+		<tfoot>
+		<tr>
+		<td class="rounded-foot-left"><em>Happy Recycling!!!</em></td>
+		<td class="rounded-foot-right">&nbsp;</td>
+		</tr>
+		</tfoot>
+		<tbody id="leaderBody">
+		</tbody>
+		</table>
+ 	</div>
+	
+	
+  <body>
+	
+	
+  </body>
+</html>
